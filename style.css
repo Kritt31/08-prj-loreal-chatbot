@@ -22,12 +22,16 @@ body {
 .site-header {
   text-align: center;
   padding-top: 50px;
+  background-color: #e3a535; /* Updated to L’Oréal gold */
+  color: #fff; /* White text for contrast */
+  padding-bottom: 20px;
 }
 
 .site-title {
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: #fff; /* White text */
 }
 
 /* chat window */
@@ -37,27 +41,47 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
+  border: 1px solid #ccc; /* Light gray border */
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
-  background: #fafafa;
+  background: #f4f4f4; /* Light gray background */
   white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add spacing between messages */
 }
 
 /* messages */
 .msg {
-  margin-bottom: 14px;
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
   line-height: 1.5;
+  word-wrap: break-word;
+  margin-bottom: 14px;
 }
 
 .msg.user {
-  color: #000;
+  align-self: flex-end; /* Align user messages to the right */
+  background-color: #e3a535; /* L’Oréal gold */
+  color: #fff; /* White text */
 }
 
 .msg.ai {
-  color: #666666;
+  align-self: flex-start; /* Align AI messages to the left */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+/* latest question */
+.latest-question {
+  font-style: italic;
+  font-size: 14px;
+  color: #666; /* Medium gray text */
+  margin-bottom: 5px;
 }
 
 /* input row */
@@ -72,17 +96,18 @@ body {
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
+  background-color: #fff; /* White input background */
 }
 
 .chat-form input:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #000; /* L’Oréal black */
   outline-offset: 2px;
 }
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
-  color: #fff;
+  background: #e3a535; /* Updated to L’Oréal gold */
+  color: #fff; /* White text */
   border: none;
   padding: 12px;
   width: 48px;
@@ -99,11 +124,11 @@ body {
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: #d1942f; /* Slightly darker gold for hover effect */
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #000; /* L’Oréal black */
   outline-offset: 2px;
 }
 
@@ -125,7 +150,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #666; /* Medium gray text */
 }
 
 .site-footer nav {
@@ -134,10 +159,18 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: #e3a535; /* Updated to L’Oréal gold */
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #d1942f; /* Slightly darker gold for hover effect */
+}
+
+/* logo */
+.site-logo {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 150px;
+  height: auto;
 }
