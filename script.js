@@ -89,22 +89,20 @@ chatForm.addEventListener("submit", async (e) => {
     // Parse the response
     const data = await response.json();
 
-    // Ensure the response contains the expected data
-    if (data.choices && data.choices[0] && data.choices[0].message) {
-      const aiMessage = data.choices[0].message.content;
+    // Extract the AI's message or provide a fallback response
+    const aiMessage =
+      (data.choices && data.choices[0] && data.choices[0].message.content) ||
+      "I'm sorry, I couldn't process your request. Please try again.";
 
-      // Add AI response to conversation history
-      conversationHistory.push({ role: "assistant", content: aiMessage });
+    // Add AI response to conversation history
+    conversationHistory.push({ role: "assistant", content: aiMessage });
 
-      // Replace the loading message with the AI's response
-      loadingMessage.textContent = aiMessage;
-    } else {
-      throw new Error("Unexpected response format from API.");
-    }
+    // Replace the loading message with the AI's response
+    loadingMessage.textContent = aiMessage;
   } catch (error) {
-    // Handle errors and display an error message
+    // Handle errors and display a fallback response
     loadingMessage.textContent =
-      "Sorry, something went wrong. Please try again.";
+      "I'm sorry, I couldn't process your request. Please try again.";
     console.error("Error:", error);
   }
 });
